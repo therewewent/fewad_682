@@ -1,5 +1,4 @@
-ss
-Copy code
+/* Global styles */
 * {
   box-sizing: border-box;
 }
@@ -17,17 +16,9 @@ header {
   border-bottom: 2px solid #ccc;
 }
 
-#menu-title {
+h1 {
   font-size: 2em;
   margin: 0;
-}
-
-#categories-title {
-  display: none; /* Will be shown only in mobile view */
-  font-size: 1.2em;
-  font-family: "Courier New", Courier, monospace;
-  text-align: left;
-  margin-left: 20px;
 }
 
 .container {
@@ -37,20 +28,21 @@ header {
   padding: 20px;
 }
 
+/* Box layout and titles */
 .box {
   background-color: #808080;
   padding: 20px;
-  width: 32%; /* Three boxes in one row for desktop */
+  width: 32%; /* Ensures three boxes fit in one row */
   border: 1px solid black;
   position: relative;
   margin-bottom: 20px; /* For vertical spacing in tablet and mobile */
-  height: 200px; /* Constrained height */
-  overflow: hidden;
+  height: 150px; /* Constrained height */
+  overflow: hidden; /* Hide extra content */
 }
 
 .box:hover {
-  overflow-y: scroll; /* Scrollable on hover */
-  cursor: ns-resize;
+  overflow-y: auto; /* Show scroll only on hover */
+  cursor: ns-resize; /* Change cursor to resize */
 }
 
 .title {
@@ -62,7 +54,18 @@ header {
   border: 1px solid black;
   font-weight: bold;
   font-size: 1.25em; /* 25% larger than paragraph */
-  white-space: normal; /* Ensure titles can break into multiple lines */
+}
+
+#chicken .title {
+  background-color: #f2b5b5; /* Color for chicken */
+}
+
+#beef .title {
+  background-color: #b54b4b; /* Color for beef */
+}
+
+#sushi .title {
+  background-color: #f2e6b5; /* Color for sushi */
 }
 
 p {
@@ -71,49 +74,54 @@ p {
   font-size: 1em;
 }
 
-/* Chicken, Beef, and Sushi title box background colors */
-#chicken .title {
-  background-color: #f2b5b5;
-}
-
-#beef .title {
-  background-color: #b54b4b;
-}
-
-#sushi .title {
-  background-color: #f2e6b5;
-}
-
-/* Tablet view (768px to 991px) */
+/* Responsive behavior for tablet view */
 @media (max-width: 991px) {
   .box {
     width: 48%; /* Two boxes in the first row */
   }
-
+  
   #sushi {
-    width: 100%; /* Sushi section takes full width */
+    width: 100%; /* Sushi section takes full width on tablet */
   }
 }
 
-/* Mobile view (<= 767px) */
+/* Mobile-specific updates */
 @media (max-width: 767px) {
-  #menu-title {
-    display: none; /* Hide "Our Menu" on mobile */
-  }
-
-  #categories-title {
-    display: block; /* Show "Categories" on mobile */
-  }
-
   .box {
-    width: 100%; /* Each section takes full width */
+    width: 100%; /* Each section takes full width on mobile */
+  }
+  
+  h1 {
+    display: none; /* Hide the "Menu" title in mobile view */
   }
 
+  header:before {
+    content: 'Categories'; /* Show "Categories" in place of "Menu" */
+    display: block;
+    font-family: 'Courier New', Courier, monospace; /* Different font family */
+    font-size: 1.5em; /* Smaller size */
+    text-align: left;
+    margin-left: 0; /* Align to the left */
+  }
+
+  /* Adjust the title to fill the width, center text, and wrap properly */
   .title {
-    width: 100%; /* Title takes full width of the box */
+    width: 100%;
     text-align: center;
-    top: 0; /* Ensure the title stays at the top */
-    right: 0;
-    white-space: normal; /* Make the title break into multiple lines */
+    white-space: normal; /* Allow wrapping */
+    word-wrap: break-word;
+  }
+
+  /* Example 10-word titles for each section */
+  #chicken .title {
+    content: 'Grilled Chicken with Fresh Herbs, Juicy, Tender and Delicious';
+  }
+
+  #beef .title {
+    content: 'Premium Beef, Slow-Cooked with Spices for a Rich Flavor';
+  }
+
+  #sushi .title {
+    content: 'Delicate Sushi Rolls, Fresh Ingredients, Hand-Made with Care';
   }
 }
