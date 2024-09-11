@@ -1,1 +1,82 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background-color: white;
+  padding: 20px 0;
+  border-bottom: 2px solid #ccc;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.box {
+  background-color: #808080;
+  padding: 20px;
+  width: 32%; /* Ensures three boxes fit in one row */
+  border: 1px solid black;
+  position: relative;
+  margin-bottom: 20px; /* For vertical spacing in tablet and mobile */
+}
+
+.title {
+  background-color: #f2b5b5; /* Default color for chicken */
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  font-weight: bold;
+  font-size: 1.25em; /* 25% larger than paragraph */
+}
+
+#chicken .title {
+  background-color: #f2b5b5; /* Color for chicken */
+}
+
+#beef .title {
+  background-color: #b54b4b; /* Color for beef */
+}
+
+#sushi .title {
+  background-color: #f2e6b5; /* Color for sushi */
+}
+
+p {
+  margin-top: 50px; /* To ensure text is pushed below the title */
+  color: white;
+  font-size: 1em;
+}
+
+@media (max-width: 991px) {
+  .box {
+    width: 48%; /* Two boxes in the first row */
+  }
+  
+  #sushi {
+    width: 100%; /* Sushi section takes full width on tablet */
+  }
+}
+
+@media (max-width: 767px) {
+  .box {
+    width: 100%; /* Each section takes full width on mobile */
+  }
+}
