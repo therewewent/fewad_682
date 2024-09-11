@@ -1,0 +1,89 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.desktop-title {
+  display: block; /* Shown by default */
+}
+
+.mobile-title {
+  display: none; /* Hidden by default */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Media Queries */
+
+/* Tablet view */
+@media (max-width: 991px) {
+  .box {
+    width: 48%;
+  }
+  #sushi {
+    width: 100%;
+  }
+}
+
+/* Mobile view only (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Hide Menu and show Categories */
+  .desktop-title {
+    display: none;
+  }
+  .mobile-title {
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+  }
+
+  .box {
+    width: 100%;
+    height: 150px; /* Constrained height */
+    overflow: hidden; /* Hide extra content */
+  }
+
+  /* Scrollable content on hover */
+  .box:hover {
+    cursor: ns-resize; /* Resize cursor */
+    overflow-y: auto; /* Show scrollbar on hover */
+  }
+
+  /* Titles for each box take full width and wrap */
+  .title {
+    text-align: center;
+    font-size: 1.1em;
+    white-space: normal; /* Allow wrapping */
+    width: 100%;
+  }
+
+  .box p {
+    margin-top: 10px;
+    color: #333;
+  }
+}
