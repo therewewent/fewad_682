@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Layout</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module 2 Assignment</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1 id="menu-title">Our Menu</h1>
-    <h1 id="categories-title">Categories</h1> <!-- This will only show on mobile -->
-  </header>
-  <section class="container">
-    <div class="box" id="chicken">
-      <div class="title">Grilled Spicy Chicken With Vegetables And Sauce</div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <!-- Main container for the entire menu -->
+    <div class="container">
+        <!-- Menu title for larger views -->
+        <h1 class="menu-title">Our Menu</h1>
+        
+        <!-- Categories title for mobile view -->
+        <h1 class="categories-title">Categories</h1>
+
+        <!-- Chicken section -->
+        <div class="section" id="chicken">
+            <div class="title">Chicken Grilled with Lemon Herbs and Special Spices for You</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia velit vel magna vestibulum, sed malesuada purus placerat.</p>
+        </div>
+
+        <!-- Beef section -->
+        <div class="section" id="beef">
+            <div class="title">Beef Steak Cooked with a Blend of Garlic and Rosemary</div>
+            <p>Nulla facilisi. Ut pulvinar elit at ligula vehicula, ac interdum massa viverra. Quisque nec ex vitae leo.</p>
+        </div>
+
+        <!-- Sushi section -->
+        <div class="section" id="sushi">
+            <div class="title">Sushi Rolls with Fresh Salmon and Avocado on a Bed of Rice</div>
+            <p>Donec auctor ante vitae massa vehicula, nec vestibulum lorem feugiat. Sed quis felis nec eros congue sollicitudin.</p>
+        </div>
     </div>
-    <div class="box" id="beef">
-      <div class="title">Tender Juicy Beef Steak With Mashed Potatoes</div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="box" id="sushi">
-      <div class="title">Fresh Sushi Rolls With Avocado And Cucumber</div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </section>
 </body>
 </html>
