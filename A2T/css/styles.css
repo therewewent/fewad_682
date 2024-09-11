@@ -1,58 +1,107 @@
-/* Hide 'Menu' title in mobile and show 'Categories' title */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.menu-title {
+  font-size: 2rem;
+}
+
+.mobile-title {
+  display: none;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.menu-item {
+  background-color: #e6e6e6;
+  border: 1px solid black;
+  padding: 20px;
+  width: 30%;
+  position: relative;
+  overflow: hidden;
+  max-height: 150px;
+}
+
+.title {
+  background-color: #f0b6b6;
+  border: 1px solid black;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#chicken .title {
+  background-color: #e28d8d;
+}
+
+#beef .title {
+  background-color: #cc4e4e;
+}
+
+#sushi .title {
+  background-color: #ecd27e;
+}
+
+.menu-item p {
+  margin-top: 50px;
+}
+
+.menu-item:hover {
+  cursor: resize;
+  overflow-y: scroll;
+}
+
+@media (max-width: 991px) {
+  .menu {
+    flex-wrap: wrap;
+  }
+
+  .menu-item {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+
+  #sushi {
+    width: 100%;
+  }
+}
+
 @media (max-width: 767px) {
-  h1 {
+  .menu-title {
     display: none;
   }
 
-  header:before {
-    content: 'Categories';
+  .mobile-title {
     display: block;
-    font-family: 'Courier New', Courier, monospace; /* Smaller, different font family */
-    font-size: 1.5em; /* Smaller size */
-    text-align: left;
-    margin-left: 0; /* Align left */
   }
-}
 
-/* Constrain the height of the boxes and add scroll behavior on hover */
-.box {
-  height: 150px; /* Constrain the height */
-  overflow: hidden; /* Hide extra content */
-}
+  .menu {
+    flex-direction: column;
+  }
 
-.box:hover {
-  cursor: ns-resize; /* Change cursor on hover */
-  overflow-y: auto; /* Show scroll only on hover */
-}
+  .menu-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-.box::-webkit-scrollbar {
-  width: 5px;
-}
-
-.box::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
-}
-
-/* Make the box titles fill the width, center text, and ensure wrapping */
-@media (max-width: 767px) {
   .title {
-    width: 100%; /* Fill the width */
-    text-align: center; /* Center the text */
-    white-space: normal; /* Allow wrapping */
-    word-wrap: break-word;
-  }
-
-  /* Example titles with 10 words */
-  #chicken .title {
-    content: 'Grilled Chicken with Fresh Herbs, Juicy, Tender and Delicious';
-  }
-
-  #beef .title {
-    content: 'Premium Beef, Slow-Cooked with Spices for a Rich Flavor';
-  }
-
-  #sushi .title {
-    content: 'Delicate Sushi Rolls, Fresh Ingredients, Hand-Made with Care';
+    width: 100%;
+    text-align: center;
   }
 }
