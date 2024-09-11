@@ -1,1 +1,37 @@
+/* Mobile Styles */
+@media (max-width: 767px) {
+    h1#menu-title {
+        display: none;
+    }
 
+    h1#categories-title {
+        display: block;
+        text-align: left;
+        font-family: 'Courier New', Courier, monospace;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .section {
+        width: 100%;
+        margin-bottom: 20px;
+        height: auto;
+        overflow-y: hidden; /* Ensure content overflow is hidden by default */
+    }
+
+    .section:hover {
+        overflow-y: scroll; /* Show scrollbar when hovered */
+    }
+
+    .section-title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 20px;
+        background-color: lightcoral;
+    }
+}
