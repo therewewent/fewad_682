@@ -1,89 +1,106 @@
-/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.desktop-title {
-  display: block; /* Shown by default */
-}
-
-.mobile-title {
-  display: none; /* Hidden by default */
+#categories-title {
+    display: none;
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.box {
-  border: 1px solid #ccc;
-  padding: 20px;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
+.section {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: lightgrey;
+    position: relative;
+    overflow: hidden;
+    height: 200px;
 }
 
-.title {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: lightcoral;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: right;
 }
 
-/* Media Queries */
 
-/* Tablet view */
-@media (max-width: 991px) {
-  .box {
-    width: 48%;
-  }
-  #sushi {
-    width: 100%;
-  }
-}
-
-/* Mobile view only (max-width: 767px) */
+/* Mobile Styles */
 @media (max-width: 767px) {
-  /* Hide Menu and show Categories */
-  .desktop-title {
-    display: none;
-  }
-  .mobile-title {
-    display: block;
-    text-align: left;
-    margin-left: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
-  }
+    h1#menu-title {
+        display: none;
+    }
 
-  .box {
-    width: 100%;
-    height: 150px; /* Constrained height */
-    overflow: hidden; /* Hide extra content */
-  }
+    h1#categories-title {
+        display: block;
+        text-align: left;
+        font-family: 'Courier New', Courier, monospace;
+        margin-bottom: 20px;
+    }
 
-  /* Scrollable content on hover */
-  .box:hover {
-    cursor: ns-resize; /* Resize cursor */
-    overflow-y: auto; /* Show scrollbar on hover */
-  }
+    .container {
+        flex-direction: column;
+    }
 
-  /* Titles for each box take full width and wrap */
-  .title {
-    text-align: center;
-    font-size: 1.1em;
-    white-space: normal; /* Allow wrapping */
-    width: 100%;
-  }
+    .section {
+        width: 100%;
+        margin-bottom: 20px;
+        height: auto;
+        overflow-y: hidden; /* Ensure content overflow is hidden by default */
+    }
 
-  .box p {
-    margin-top: 10px;
-    color: #333;
-  }
+    .section:hover {
+        overflow-y: scroll; /* Show scrollbar when hovered */
+    }
+
+    .section-title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 20px;
+        background-color: lightcoral;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .section {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+
+    .container .section:nth-child(3) {
+        width: 100%;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+    .container {
+        flex-direction: row;
+    }
 }
