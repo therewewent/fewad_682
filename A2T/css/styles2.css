@@ -1,0 +1,126 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Hide mobile titles by default */
+.mobile-title, .categories-title {
+  display: none;
+}
+
+/* Header Styles */
+header {
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+/* Header Titles */
+.header-title {
+  font-size: 200%;
+  color: #333;
+}
+
+/* Menu Navigation */
+nav.menu {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav.menu ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav.menu ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Menu Sections */
+.menu-section {
+  padding: 20px;
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ccc;
+  margin: 20px;
+}
+
+/* Box Scrollable on Hover */
+.menu-section:hover {
+  overflow-y: scroll;
+  cursor: ns-resize;
+}
+
+.menu-section h2 {
+  font-size: 150%;
+  color: #444;
+}
+
+.menu-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-section ul li {
+  padding: 5px 0;
+  font-size: 120%;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  /* Hide desktop title, show mobile "Categories" title */
+  .header-title {
+    display: none;
+  }
+
+  .mobile-title {
+    display: none; /* Removed as per requirement */
+  }
+
+  .categories-title {
+    display: block;
+    font-size: 130%;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin-left: 15px;
+  }
+
+  nav.menu ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  nav.menu {
+    text-align: left;
+  }
+
+  .menu-section h2 {
+    font-size: 120%;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+  }
+
+  .menu-section ul li {
+    font-size: 110%;
+  }
+}
