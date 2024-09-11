@@ -1,118 +1,49 @@
-/* Global styles */
-* {
-  box-sizing: border-box;
+/* Hide 'Menu' title in mobile and show 'Categories' title */
+@media (max-width: 767px) {
+  h1 {
+    display: none;
+  }
+
+  header:before {
+    content: 'Categories';
+    display: block;
+    font-family: 'Courier New', Courier, monospace; /* Smaller, different font family */
+    font-size: 1.5em; /* Smaller size */
+    text-align: left;
+    margin-left: 0; /* Align left */
+  }
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  text-align: center;
-  background-color: white;
-  padding: 20px 0;
-  border-bottom: 2px solid #ccc;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-/* Box layout and titles */
+/* Constrain the height of the boxes and add scroll behavior on hover */
 .box {
-  background-color: #808080;
-  padding: 20px;
-  width: 32%; /* Ensures three boxes fit in one row */
-  border: 1px solid black;
-  position: relative;
-  margin-bottom: 20px; /* For vertical spacing in tablet and mobile */
-  height: 150px; /* Constrained height */
+  height: 150px; /* Constrain the height */
   overflow: hidden; /* Hide extra content */
 }
 
 .box:hover {
+  cursor: ns-resize; /* Change cursor on hover */
   overflow-y: auto; /* Show scroll only on hover */
-  cursor: ns-resize; /* Change cursor to resize */
 }
 
-.title {
-  background-color: #f2b5b5; /* Default color for chicken */
-  position: absolute;
-  top: -20px;
-  right: 20px;
-  padding: 5px 10px;
-  border: 1px solid black;
-  font-weight: bold;
-  font-size: 1.25em; /* 25% larger than paragraph */
+.box::-webkit-scrollbar {
+  width: 5px;
 }
 
-#chicken .title {
-  background-color: #f2b5b5; /* Color for chicken */
+.box::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
 }
 
-#beef .title {
-  background-color: #b54b4b; /* Color for beef */
-}
-
-#sushi .title {
-  background-color: #f2e6b5; /* Color for sushi */
-}
-
-p {
-  margin-top: 50px; /* To ensure text is pushed below the title */
-  color: white;
-  font-size: 1em;
-}
-
-/* Responsive behavior for tablet view */
-@media (max-width: 991px) {
-  .box {
-    width: 48%; /* Two boxes in the first row */
-  }
-  
-  #sushi {
-    width: 100%; /* Sushi section takes full width on tablet */
-  }
-}
-
-/* Mobile-specific updates */
+/* Make the box titles fill the width, center text, and ensure wrapping */
 @media (max-width: 767px) {
-  .box {
-    width: 100%; /* Each section takes full width on mobile */
-  }
-  
-  h1 {
-    display: none; /* Hide the "Menu" title in mobile view */
-  }
-
-  header:before {
-    content: 'Categories'; /* Show "Categories" in place of "Menu" */
-    display: block;
-    font-family: 'Courier New', Courier, monospace; /* Different font family */
-    font-size: 1.5em; /* Smaller size */
-    text-align: left;
-    margin-left: 0; /* Align to the left */
-  }
-
-  /* Adjust the title to fill the width, center text, and wrap properly */
   .title {
-    width: 100%;
-    text-align: center;
+    width: 100%; /* Fill the width */
+    text-align: center; /* Center the text */
     white-space: normal; /* Allow wrapping */
     word-wrap: break-word;
   }
 
-  /* Example 10-word titles for each section */
+  /* Example titles with 10 words */
   #chicken .title {
     content: 'Grilled Chicken with Fresh Herbs, Juicy, Tender and Delicious';
   }
