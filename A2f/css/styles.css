@@ -1,0 +1,109 @@
+/* General styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 175%;
+    margin-bottom: 30px;
+}
+
+#page-title {
+    font-size: 175%;
+}
+
+#categories-title {
+    font-size: 150%;
+    font-family: Arial, sans-serif; /* Different font for mobile view */
+    text-align: left;
+    margin-left: 15px;
+}
+
+/* Container and Box styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.box {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 15px 0;
+    position: relative;
+}
+
+.box .title-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #e0e0e0;
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 125%;
+    width: auto;
+}
+
+.content {
+    margin-top: 40px; /* To push content below title */
+    height: 100px; /* Limit height */
+    overflow-y: hidden;
+}
+
+.box:hover .content {
+    overflow-y: scroll; /* Scrollbar appears on hover */
+    cursor: ns-resize; /* "Resize" cursor */
+}
+
+/* Desktop View (992px and above) */
+@media (min-width: 992px) {
+    .box {
+        width: 32%;
+    }
+}
+
+/* Tablet View (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .box {
+        width: 48%;
+    }
+
+    #sushi-box {
+        width: 100%;
+    }
+}
+
+/* Mobile View (767px and below) */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .box .title-box {
+        width: 100%;
+        text-align: center;
+        white-space: normal; /* Allow wrapping */
+    }
+
+    #page-title {
+        display: none; /* Hide "Menu" in mobile */
+    }
+
+    #categories-title {
+        display: block; /* Show "Categories" in mobile */
+    }
+
+    .content {
+        margin-top: 40px; /* Ensure content is pushed below title */
+    }
+}
